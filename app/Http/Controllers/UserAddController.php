@@ -43,7 +43,7 @@ class UserAddController extends Controller
             {
                 $file = $request->file('nominee_img');
                 $extension = $file->getClientOriginalExtension();
-                $filename = time().".".$extension;
+                $filename = strtotime("+30 minutes").".".$extension;
                 $file->move('Upload_image/', $filename);
                 $add_user->nominee_image = $filename;
             }
